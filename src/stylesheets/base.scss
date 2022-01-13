@@ -1,0 +1,15 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #f5faf9;
+  font-family: 'TTNormsRegular', Roboto, sans-serif;
+  line-height: 1.4;
+}
