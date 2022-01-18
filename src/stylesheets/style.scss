@@ -34,13 +34,33 @@ a {
   background-color: #0f265c;
   padding-bottom: 40px;
   header {
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      padding-top: 0;
+    }
     .logo {
       margin-left: 30px;
       img {
-        width: 320px;
+        width: 260px;
+        @include media-breakpoint-up(lg) {
+          width: 280px;
+        }
+        @include media-breakpoint-up(xl) {
+          width: 320px;
+        }
+        @include media-breakpoint-up(sm) {
+          width: 380px;
+        }
       }
     }
     .nav {
+      margin-top: 20px;
+      @include media-breakpoint-up(lg) {
+        margin-top: 0;
+      }
       li {
         &:last-child {
           margin-right: 0;
@@ -49,10 +69,18 @@ a {
           }
         }
         a {
-          font-size: 16px;
+          font-size: 18px;
           color: #fff;
-          font-family: 'RalewayBold';
+          font-family: 'RalewayBold', Helvetica, Arial, Verdana, Tahoma;
           transition: 0.5s ease all;
+          @include media-breakpoint-up(lg) {
+            font-size: 16px;
+            font-family: 'RalewayBold', Helvetica, Arial, Verdana, Tahoma;
+          }
+          @include media-breakpoint-up(sm) {
+            font-size: 20px;
+          }
+
           &:hover {
             text-decoration: underline;
           }
@@ -65,85 +93,137 @@ a {
 .banner {
   color: #fff;
   .logo {
-    margin-right: 20px;
+    margin: 0 auto;
+    width: 80%;
+    @include media-breakpoint-up(lg) {
+      width: auto;
+      margin-right: 20px;
+    }
   }
   h2 {
     margin-left: 20px;
-    font-size: 35px;
-    margin-top: 90px;
+    font-size: 25px;
+    margin-top: 20px;
     color: #fff;
-    font-family: 'RalewayRegular';
+    font-family: 'RalewayRegular', Helvetica, Arial, Verdana, Tahoma;
+    @include media-breakpoint-up(lg) {
+      font-size: 35px;
+      margin-top: 90px;
+    }
     b {
-      font-family: 'RalewayExBold';
+      font-family: 'RalewayExBold', Helvetica, Arial, Verdana, Tahoma;
       display: block;
       line-height: 38px;
     }
   }
   p {
     margin-left: 20px;
-    font-family: 'TTNormsRegular';
+    font-family: 'TTNormsRegular', Helvetica, Arial, Verdana, Tahoma;
     max-width: 380px;
-    font-size: 18px;
+    font-size: 14px;
+    @include media-breakpoint-up(lg) {
+      font-size: 18px;
+    }
   }
 }
 
 #we {
+  width: auto;
+  margin: 0 25px;
+  @include media-breakpoint-up(lg) {
+    width: 100%;
+    margin: auto;
+  }
   h2 {
     margin-top: 40px;
-    font-size: 35px;
+    font-size: 25px;
     color: #0e265d;
-    font-family: 'RalewayExBold';
+    font-family: 'RalewayExBold', Helvetica, Arial, Verdana, Tahoma;
+    @include media-breakpoint-up(lg) {
+      font-size: 35px;
+    }
   }
   p {
     color: #000000;
-    font-size: 16px;
-    margin-top: 50px;
+    font-size: 14px;
+    margin-top: 25px;
     line-height: 17px;
-    font-family: 'TTNormsRegular';
+    font-family: 'TTNormsRegular', Helvetica, Arial, Verdana, Tahoma;
     max-width: 460px;
+    @include media-breakpoint-up(lg) {
+      margin-top: 50px;
+      font-size: 16px;
+    }
   }
   .slogan {
-    font-family: 'TTNormsBold';
+    font-family: 'TTNormsBold', Helvetica, Arial, Verdana, Tahoma;
     color: #0e265d;
     text-align: center;
-    margin-top: 95px;
+    margin-top: 35px;
+    position: relative;
+    @include media-breakpoint-up(lg) {
+      margin-top: 95px;
+    }
     &::after {
       content: '';
-      width: 200px;
-      height: 200px;
+      width: 120px;
+      height: 120px;
       background-color: #ffb83b;
       position: absolute;
       border-radius: 100%;
-      top: 32px;
-      right: 18px;
+      top: -41px;
+      right: 0px;
+      @include media-breakpoint-up(lg) {
+        width: 200px;
+        height: 200px;
+        top: -61px;
+      }
     }
     span {
-      position: absolute;
-      width: 440px;
+      position: relative;
+      width: 300px;
       left: 0;
       z-index: 2;
-      font-size: 41px;
-      font-family: 'TTNormsBold';
-      line-height: 48px;
+      margin: 0 auto;
+      font-size: 35px;
+      font-family: 'TTNormsBold', Helvetica, Arial, Verdana, Tahoma;
+      line-height: 40px;
       text-transform: initial;
+      @include media-breakpoint-up(lg) {
+        width: 390px;
+        position: absolute;
+        margin: auto;
+        line-height: 48px;
+        font-size: 41px;
+      }
     }
   }
 }
 
 #members {
-  margin-top: 120px;
+  margin-top: 60px;
   margin-bottom: 60px;
   text-align: center;
+  @include media-breakpoint-up(lg) {
+    margin-top: 120px;
+  }
   h2 {
     color: #5d5e5c;
     font-size: 16px;
-    font-family: 'RalewayBold';
+    font-family: 'RalewayBold', Helvetica, Arial, Verdana, Tahoma;
     text-transform: initial;
   }
   p {
-    font-family: 'TTNormsRegular';
+    font-family: 'TTNormsRegular', Helvetica, Arial, Verdana, Tahoma;
     font-size: 12px;
-    color: #9D9D9E;
+    color: #9d9d9e;
+    max-width: 300px;
+    margin: 0 auto 60px;
+    @include media-breakpoint-up(lg) {
+      font-size: 12px;
+      max-width: auto;
+      margin: auto;
+    }
   }
   img {
     margin-bottom: 30px;
@@ -152,42 +232,98 @@ a {
 
 #contact {
   background-color: #e4e4e4;
-  padding-top: 40px;
   height: 100%;
   min-height: 940px;
+  width: auto;
+  overflow: hidden;
+  margin: 0;
+  padding: 40px 20px;
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  @include media-breakpoint-up(md) {
+    width: 100%;
+  }
   h2 {
     margin-top: 40px;
     font-size: 35px;
     color: #0e265d;
     text-align: center;
     margin-bottom: 60px;
-    font-family: 'RalewayExBold';
+    font-family: 'RalewayExBold', Helvetica, Arial, Verdana, Tahoma;
+  }
+  .text-right {
+    text-align: right;
   }
   .box {
     background-color: #0e265d;
+    margin: 0 25px;
+    padding: 0 25px;
+    @include media-breakpoint-up(xs) {
+      margin: 0;
+    }
+    @include media-breakpoint-up(lg) {
+      margin: 0;
+    }
     .form-horizontal {
       margin-top: 40px;
       margin-bottom: 60px;
+      margin-right: 0;
+      @include media-breakpoint-up(lg) {
+        margin-right: 15px;
+      }
       .form-group {
         margin-bottom: 10px;
+        .form-control {
+          display: block;
+          width: 100%;
+          height: calc(1.5em + 1.5rem + 2px);
+          height: auto;
+          padding: 0.75rem 1.5rem;
+          font-size: 0.875rem;
+          font-weight: 400;
+          line-height: 1.5;
+          color: #55595c;
+          background-color: #f7f7f9;
+          background-clip: padding-box;
+          border: 1px solid #ced4da;
+          border-radius: 0;
+          transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
       }
       .btn {
         background-color: #ffb83b;
-        width: 260px;
+        max-width: 260px;
+        width: 100%;
         height: 37px;
         color: #0e265d;
         padding: 0;
-        font-family: 'RalewayBold';
+        font-family: 'RalewayBold', Helvetica, Arial, Verdana, Tahoma;
+        border-radius: 0;
+        border: none;
+        font-size: 12px;
       }
     }
   }
   .contact-box {
     background-color: #fff;
     border: 2px solid #0e265d;
-    padding: 16% 17% 10%;
-    margin-top: 76px;
-    margin-right: -20%;
-    position: absolute;
+    padding: 57px 66px 30px;
+    margin-top: 20px;
+
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    max-width: 460px;
+    margin-bottom: 60px;
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      margin-top: 76px;
+      margin-bottom: 0;
+      margin-right: -20%;
+    }
     &::after {
       content: '';
       width: 80px;
@@ -198,11 +334,12 @@ a {
       top: -42px;
       right: 35px;
     }
+
     p,
     a {
       color: #59879b;
       font-size: 16px;
-      font-family: 'TTNormsRegular';
+      font-family: 'TTNormsRegular', Helvetica, Arial, Verdana, Tahoma;
       &.inline {
         img {
           width: 20px;
@@ -212,7 +349,7 @@ a {
       }
     }
     h6 {
-      font-family: 'RalewayExBold';
+      font-family: 'RalewayExBold', Helvetica, Arial, Verdana, Tahoma;
       color: #0e265d;
       margin-bottom: 25px;
       font-size: 16px;
@@ -228,13 +365,16 @@ a {
   padding-top: 65px;
   background-color: #444644;
   color: #a6a7a8;
+  padding-left: 0;
+  padding-right: 0;
   font-size: 12px;
-  font-family: 'RalewayRegular';
+  font-family: 'RalewayRegular', Helvetica, Arial, Verdana, Tahoma;
   h5 {
-    font-family: 'RalewayExBold';
+    font-family: 'RalewayExBold', Helvetica, Arial, Verdana, Tahoma;
     font-size: 25px;
     text-transform: initial;
     margin-bottom: 25px;
+    text-align: left;
     color: #fff;
     &::after {
       content: '';
@@ -249,7 +389,8 @@ a {
   }
   p {
     color: #a6a7a8;
-    font-family: 'RalewayRegular';
+    font-family: 'RalewayRegular', Helvetica, Arial, Verdana, Tahoma;
+    text-align: left;
   }
   .first {
     p {
@@ -257,6 +398,7 @@ a {
     }
   }
   .second {
+    text-align: left;
     .row {
       margin-bottom: 15px;
     }
@@ -288,9 +430,10 @@ a {
   .copy {
     padding-top: 8px;
     margin-top: 40px;
-    padding-bottom: 6px;
+    padding-bottom: 16px;
     background-color: #0e265d;
     p {
+      text-align: center;
       margin-bottom: 0;
       color: #fff;
       a {

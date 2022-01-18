@@ -93,5 +93,8 @@
       "stylelint --fix",
       "git add"
     ]
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
   }
 }
